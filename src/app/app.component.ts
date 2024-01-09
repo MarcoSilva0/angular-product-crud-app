@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { RouterOutlet } from "@angular/router";
 import { HeaderComponent } from "./components/template/header/header.component";
 
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -12,7 +11,6 @@ import { NavComponent } from "./components/template/nav/nav.component";
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet,
     HeaderComponent,
     MatToolbarModule,
     FooterComponent,
@@ -20,6 +18,4 @@ import { NavComponent } from "./components/template/nav/nav.component";
   ],
   templateUrl: "app.component.html",
 })
-export class AppComponent {
-  title = "app";
-}
+export class AppComponent {}
