@@ -5,6 +5,7 @@ import { HeaderComponent } from "./components/template/header/header.component";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { FooterComponent } from "./components/template/footer/footer.component";
 import { NavComponent } from "./components/template/nav/nav.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @Component({
   selector: "app-root",
@@ -14,7 +15,8 @@ import { NavComponent } from "./components/template/nav/nav.component";
     HeaderComponent,
     MatToolbarModule,
     FooterComponent,
-    NavComponent
+    NavComponent,
+    HttpClientModule,
   ],
   templateUrl: "app.component.html",
 })

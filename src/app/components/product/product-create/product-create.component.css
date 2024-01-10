@@ -1,0 +1,10 @@
+.card {
+    padding: 16px;
+}
+.card form {
+    display: flex;
+    flex-direction: column;
+}
+.btn-actions button {
+ margin-right: 8px;
+}

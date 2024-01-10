@@ -12,6 +12,6 @@ export class ProductPageComponent {
   constructor(private router: Router) {}
 
   navigateToProductCreate(): void {
-    this.router.navigate(["/products/create"]);
+    this.router.navigate(["products/create"]);
   }
 }
