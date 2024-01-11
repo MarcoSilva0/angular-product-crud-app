@@ -8,16 +8,16 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 # Pages
 - Home
-![Alt text](image.png)
+![Alt text](src/assets/img/image.png)
 
 - Product List
-![Alt text](image-1.png)
+![Alt text](src/assets/img/image-1.png)
 
 - Add Product
-![Alt text](image-2.png)
+![Alt text](src/assets/img/image-2.png)
 
 - Edit Product
-![Alt text](image-3.png)
+![Alt text](src/assets/img/image-3.png)
 
 - Delete Product
-![Alt text](image-4.png)
+![Alt text](src/assets/img/image-4.png)
