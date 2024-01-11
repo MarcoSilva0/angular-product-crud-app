@@ -1,7 +1,7 @@
 import { Component, ViewChild } from "@angular/core";
 import { Product } from "../product.model";
 import { ProductService } from "../product.service";
-import { Router } from "@angular/router";
+import { Router, RouterModule } from "@angular/router";
 import { MatButtonModule } from "@angular/material/button";
 import { CurrencyPipe, NgForOf } from "@angular/common";
 import { MatTableModule } from "@angular/material/table";
@@ -9,7 +9,7 @@ import { MatTableModule } from "@angular/material/table";
 @Component({
   selector: "app-product-read",
   standalone: true,
-  imports: [MatButtonModule, NgForOf, CurrencyPipe, MatTableModule],
+  imports: [MatButtonModule, NgForOf, CurrencyPipe, MatTableModule, RouterModule],
   providers: [ProductService],
   templateUrl: "./product-read.component.html",
   styleUrl: "./product-read.component.css",

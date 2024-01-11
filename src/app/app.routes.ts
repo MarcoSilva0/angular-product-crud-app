@@ -3,6 +3,7 @@ import { HomeComponent } from "./views/home/home.component";
 import { ProductPageComponent } from "./views/product-page/product-page.component";
 import { ProductCreateComponent } from "./components/product/product-create/product-create.component";
 import { ProductReadComponent } from "./components/product/product-read/product-read.component";
+import { ProductUpdateComponent } from "./components/product/product-update/product-update.component";
 
 
 export const routes: Routes = [
@@ -21,5 +22,9 @@ export const routes: Routes = [
   {
     path: "products/read",
     component: ProductReadComponent,
+  },
+  {
+    path: "products/update/:id",
+    component: ProductUpdateComponent,
   },
 ];
