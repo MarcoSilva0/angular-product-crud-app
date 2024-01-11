@@ -16,7 +16,7 @@ import { MatTableModule } from "@angular/material/table";
 })
 export class ProductReadComponent {
   products: Product[] = [];
-  displayedColumns = ["id", "name", "price"];
+  displayedColumns = ["id", "name", "price", "action"];
 
   constructor(private router: Router, private productService: ProductService) {}
 
