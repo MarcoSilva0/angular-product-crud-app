@@ -5,6 +5,7 @@ import { Router, RouterModule } from "@angular/router";
 import { MatButtonModule } from "@angular/material/button";
 import { CurrencyPipe, NgForOf } from "@angular/common";
 import { MatTableModule } from "@angular/material/table";
+import { HeaderService } from "../../template/header/header.service";
 
 @Component({
   selector: "app-product-read",
@@ -18,7 +19,13 @@ export class ProductReadComponent {
   products: Product[] = [];
   displayedColumns = ["id", "name", "price", "action"];
 
-  constructor(private router: Router, private productService: ProductService) {}
+  constructor(private router: Router, private productService: ProductService, private headerService: HeaderService) {
+    headerService.headerData = {
+      title: "Cadastro de Produtos",
+      icon: "storefront",
+      routeUrl: "/products",
+    };
+  }
 
   ngOnInit(): void {
     this.productService.read().subscribe((products) => {
