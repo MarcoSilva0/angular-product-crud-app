@@ -1,15 +1,15 @@
 import { Component } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { ProductService } from "../product.service";
 import { MatButtonModule } from "@angular/material/button";
-import { MatCardModule } from "@angular/material/card";
+import { FormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
-import { Product } from "../product.model";
-import { ProductService } from "../product.service";
+import { MatCardModule } from "@angular/material/card";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Product } from "../product.model";
 
 @Component({
-  selector: "app-product-update",
+  selector: "app-product-delete",
   standalone: true,
   imports: [
     MatButtonModule,
@@ -19,10 +19,10 @@ import { ActivatedRoute, Router } from "@angular/router";
     MatCardModule,
   ],
   providers: [ProductService],
-  templateUrl: "./product-update.component.html",
-  styleUrl: "./product-update.component.css",
+  templateUrl: "./product-delete.component.html",
+  styleUrl: "./product-delete.component.css",
 })
-export class ProductUpdateComponent {
+export class ProductDeleteComponent {
   constructor(
     private productService: ProductService,
     private router: Router,
@@ -30,13 +30,13 @@ export class ProductUpdateComponent {
   ) {}
 
   product: Product = {
+    id: 0,
     name: "",
     price: 0,
   };
 
   ngOnInit(): void {
     const idRoute = this.routeParam.snapshot.paramMap.get("id");
-    // Verificar se idRoute não é nulo antes de prosseguir
     if (idRoute !== null) {
       this.productService.readById(idRoute).subscribe((product) => {
         this.product = product;
@@ -46,11 +46,15 @@ export class ProductUpdateComponent {
     }
   }
 
-  updateProduct(): void {
-    this.productService.update(this.product).subscribe(() => {
-      this.productService.showMessage("Produto atualizado com sucesso");
-      this.router.navigate(["/products/read"]);
-    });
+  deleteProduct(): void {
+    if (this.product && this.product.id !== undefined) {
+      this.productService.delete(this.product.id).subscribe(() => {
+        this.productService.showMessage("Produto excluído com sucesso");
+        this.router.navigate(["/products/read"]);
+      });
+    } else {
+      this.productService.showMessage("Algo deu errado, tente novamente");
+    }
   }
 
   cancel(): void {
